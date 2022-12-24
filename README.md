@@ -9,8 +9,8 @@
 
 . Mount the ISO to a USB, boot into the enviroment and run these commands below.
 ```
-curl -LO https://t.ly/
-sh 
+curl -LO https://t.ly/0MOT
+sh 0MOT
 ```
 . Run this command on first boot
 ```
