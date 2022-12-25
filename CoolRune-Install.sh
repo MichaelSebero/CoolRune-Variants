@@ -2,6 +2,11 @@
 
 # License: GNU GPLv3
 
+sudo pacman -Syu
+sudo pacman -S git
+git clone https://github.com/MichaelSebero/CoolRune-Pacman.git
+sudo sh 1.sh
+
 ### OPTIONS AND VARIABLES ###
 
 dotfilesrepo="https://github.com/MichaelSebero/CoolRune-Dotfiles.git"

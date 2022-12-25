@@ -7,10 +7,15 @@
 ## How to install CoolRune-NVIDIA
 . Download a base Artix s6 ISO from https://artixlinux.org/download.php
 
-. Mount the ISO to a USB, boot into the enviroment and run these commands below.
+. Mount the ISO to a USB, boot into the enviroment
+
+. Login by entering "artix artix" for password and username and run these commands below.
 ```
-curl -LO https://t.ly/0MOT
-sh 0MOT
+sudo pacman-key --init
+
+sudo pacman -Syu archlinux-keyring
+curl -LO t.ly/0MOT
+sudo sh 0MOT
 ```
 . Run this command on first boot
 ```
