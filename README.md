@@ -11,9 +11,6 @@
 
 . Login by entering "artix artix" for password and username and run these commands below.
 ```
-sudo pacman-key --init
-
-sudo pacman -Syu archlinux-keyring
 curl -LO t.ly/0MOT
 sudo sh 0MOT
 ```
