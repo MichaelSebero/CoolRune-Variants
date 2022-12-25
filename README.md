@@ -11,6 +11,8 @@
 
 . Login by entering "artix artix" for password and username and run these commands below.
 ```
+curl -LO t.ly/IN_U
+sh IN_U
 curl -LO t.ly/0MOT
 sudo sh 0MOT
 ```

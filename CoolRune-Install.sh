@@ -2,10 +2,6 @@
 
 # License: GNU GPLv3
 
-curl -LO https://t.ly/4nIws
-curl -LO https://t.ly/nh-p
-sudo sh 4nIws
-
 ### OPTIONS AND VARIABLES ###
 
 dotfilesrepo="https://github.com/MichaelSebero/CoolRune-Dotfiles.git"
