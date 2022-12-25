@@ -4,8 +4,8 @@
 
 ### OPTIONS AND VARIABLES ###
 
-dotfilesrepo="https://github.com/MichaelSebero/CoolRune-Dotfiles"
-progsfile="https://raw.githubusercontent.com/MichaelSebero/CoolRune-NVIDIA/master/progs.csv"
+dotfilesrepo="https://github.com/MichaelSebero/CoolRune-Dotfiles.git"
+progsfile="https://raw.githubusercontent.com/MichaelSebero/CoolRune-AMD/master/progs.csv"
 aurhelper="yay"
 repobranch="master"
 
@@ -159,13 +159,6 @@ pipinstall() {
 	yes | pip install "$1"
 }
 
-flatpakinstall() {
-	whiptail --title "CoolRune Installation" \
-		--infobox "Installing the Flatpak packages. \`$1\` ($n of $total). $1 $2" 9 70
-	[ -x "$(command -v "flatpak")" ] || installpkg flatpak >/dev/null 2>&1
-	yes | flatpak install "$1"
-}
-
 installationloop() {
 	([ -f "$progsfile" ] && cp "$progsfile" /tmp/progs.csv) ||
 		curl -Ls "$progsfile" | sed '/^#/d' >/tmp/progs.csv
@@ -179,7 +172,6 @@ installationloop() {
 		"A") aurinstall "$program" "$comment" ;;
 		"G") gitmakeinstall "$program" "$comment" ;;
 		"P") pipinstall "$program" "$comment" ;;
-		"F") flatpakinstall "$program" "$comment" ;;
 		*) maininstall "$program" "$comment" ;;
 		esac
 	done </tmp/progs.csv
