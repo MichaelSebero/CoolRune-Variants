@@ -74,8 +74,6 @@ adduserandpass() {
 }
 
 refreshkeys() {
-	case "$(readlink -f /sbin/init)" in
-	*systemd*)
 		whiptail --infobox "Refreshing Keyring..." 7 40
 		pacman --noconfirm -S artix-keyring >/dev/null 2>&1
 		;;
