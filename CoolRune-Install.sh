@@ -298,5 +298,11 @@ echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/
 echo "Defaults editor=/usr/bin/nvim" >/etc/sudoers.d/02-larbs-visudo-editor
 
 # Last message! Install complete!
+cd /home/$USER/Desktop/
+sh CoolRune-Files.sh
+sh CoolRune-NVIDIA-Patch.sh
+sh Last.sh
+sudo update-grub
+s6-db-reload
 finalize
 #clear
