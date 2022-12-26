@@ -27,7 +27,7 @@ welcomemsg() {
 
 	whiptail --title "Important Note!" --yes-button "All ready!" \
 		--no-button "Return..." \
-		--yesno "Be sure the computer you are using has current pacman updates and refreshed keyrings.\\n\\nIf it does not, the installation of some programs might fail." 8 70
+		--yesno "Be sure the computer you are using has current pacman updates and refreshed Arch keyrings.\\n\\nIf it does not, the installation of some programs might fail." 8 70
 }
 
 getuserandpass() {
@@ -74,28 +74,32 @@ adduserandpass() {
 }
 
 refreshkeys() {
-		whiptail --infobox "Refreshing Keyring..." 7 40
-		pacman --noconfirm -S artix-keyring >/dev/null 2>&1
+	case "$(readlink -f /sbin/init)" in
+	*systemd*)
+		whiptail --infobox "Refreshing Arch Keyring..." 7 40
+		pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
 		;;
-		whiptail --infobox "Enabling Repositories..." 7 40
+	*)
+		whiptail --infobox "Enabling Arch Repositories..." 7 40
 		if ! grep -q "^\[universe\]" /etc/pacman.conf; then
 			echo "[universe]
-Server = https://universe.artixlinux.org/\$artix
-Server = https://mirror1.artixlinux.org/universe/\$artix
-Server = https://mirror.pascalpuffke.de/artix-universe/\$artix
-Server = https://artixlinux.qontinuum.space/artixlinux/universe/os/\$artix
-Server = https://mirror1.cl.netactuate.com/artix/universe/\$artix
+Server = https://universe.artixlinux.org/\$arch
+Server = https://mirror1.artixlinux.org/universe/\$arch
+Server = https://mirror.pascalpuffke.de/artix-universe/\$arch
+Server = https://artixlinux.qontinuum.space/artixlinux/universe/os/\$arch
+Server = https://mirror1.cl.netactuate.com/artix/universe/\$arch
 Server = https://ftp.crifo.org/artix-universe/" >>/etc/pacman.conf
 			pacman -Sy --noconfirm >/dev/null 2>&1
 		fi
 		pacman --noconfirm --needed -S \
-			artix-keyring >/dev/null 2>&1
+			artix-keyring artix-archlinux-support >/dev/null 2>&1
 		for repo in extra community; do
 			grep -q "^\[$repo\]" /etc/pacman.conf ||
 				echo "[$repo]
-Include = /etc/pacman.d/mirrorlist" >>/etc/pacman.conf
+Include = /etc/pacman.d/mirrorlist-arch" >>/etc/pacman.conf
 		done
 		pacman -Sy >/dev/null 2>&1
+		pacman-key --populate archlinux >/dev/null 2>&1
 		pacman-key --populate artix >/dev/null 2>&1
 		;;
 	esac
@@ -222,9 +226,9 @@ preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
 
-# Refresh keyrings.
+# Refresh Arch keyrings.
 refreshkeys ||
-	error "Error automatically refreshing keyring. Consider doing so manually."
+	error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
 for x in curl ca-certificates base-devel git ntp zsh; do
 	whiptail --title "CoolRune Installation" \
@@ -294,11 +298,5 @@ echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/
 echo "Defaults editor=/usr/bin/nvim" >/etc/sudoers.d/02-larbs-visudo-editor
 
 # Last message! Install complete!
-cd /home/$USER/Desktop/
-sh CoolRune-Files.sh
-sh CoolRune-NVIDIA-Patch.sh
-sh Last.sh
-sudo update-grub
-s6-db-reload
 finalize
 #clear
