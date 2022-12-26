@@ -22,10 +22,10 @@ error() {
 }
 
 welcomemsg() {
-	whiptail --title "Welcome!" \
+	whiptail --title "CoolRune" \
 		--msgbox "Welcome to the CoolRune setup\\n\\nThis script will automatically install CoolRune on your computer.\\n\\" 10 60
 
-	whiptail --title "Important Note!" --yes-button "All ready!" \
+	whiptail --title "CoolRune" --yes-button "All ready!" \
 		--no-button "Return..." \
 		--yesno "Be sure the computer you are using has current pacman updates and refreshed Arch keyrings.\\n\\nIf it does not, the installation of some programs might fail." 8 70
 }
@@ -174,10 +174,6 @@ pacman --noconfirm --needed -Sy libnewt ||
 
 
 ### The rest of the script requires no user input.
-
-# Refresh keyrings.
-refreshkeys ||
-	error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
 for x in curl ca-certificates base-devel git ntp zsh; do
 	whiptail --title "CoolRune Installation" \
