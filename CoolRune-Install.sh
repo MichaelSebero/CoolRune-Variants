@@ -17,7 +17,7 @@ Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
 Server = https://ftp.crifo.org/artix-universe/' >> /etc/pacman.conf
 
 pacman -Sy
-pacman -S artix-archlinux-support archlinux-mirrorlist
+pacman -S artix-archlinux-support
 
 echo '
 # Arch Linux repos
