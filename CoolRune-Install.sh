@@ -4,8 +4,8 @@
 
 ### OPTIONS AND VARIABLES ###
 
-dotfilesrepo="https://github.com/MichaelSebero/CoolRune-Dotfiles.git"
-progsfile="https://raw.githubusercontent.com/MichaelSebero/CoolRune-AMD/master/progs.csv"
+dotfilesrepo="https://github.com/MichaelSebero/CoolRune-Files.git"
+progsfile="https://raw.githubusercontent.com/MichaelSebero/CoolRune-NVIDIA/master/progs.csv"
 aurhelper="yay"
 repobranch="master"
 
@@ -30,57 +30,14 @@ welcomemsg() {
 		--yesno "Be sure the computer you are using has current pacman updates and refreshed Arch keyrings.\\n\\nIf it does not, the installation of some programs might fail." 8 70
 }
 
-getuserandpass() {
-	# Prompts user for new username an password.
-	name=$(whiptail --inputbox "Enter a name for the user account." 10 60 3>&1 1>&2 2>&3 3>&1) || exit 1
-	while ! echo "$name" | grep -q "^[a-z_][a-z0-9_-]*$"; do
-		name=$(whiptail --nocancel --inputbox "Username not valid. Give a username beginning with a letter, with only lowercase letters, - or _." 10 60 3>&1 1>&2 2>&3 3>&1)
-	done
-	pass1=$(whiptail --nocancel --passwordbox "Enter a password for the user." 10 60 3>&1 1>&2 2>&3 3>&1)
-	pass2=$(whiptail --nocancel --passwordbox "Retype password." 10 60 3>&1 1>&2 2>&3 3>&1)
-	while ! [ "$pass1" = "$pass2" ]; do
-		unset pass2
-		pass1=$(whiptail --nocancel --passwordbox "Passwords do not match.\\n\\nEnter password again." 10 60 3>&1 1>&2 2>&3 3>&1)
-		pass2=$(whiptail --nocancel --passwordbox "Retype password." 10 60 3>&1 1>&2 2>&3 3>&1)
-	done
-}
-
-usercheck() {
-	! { id -u "$name" >/dev/null 2>&1; } ||
-		whiptail --title "WARNING" --yes-button "CONTINUE" \
-			--no-button "No wait..." \
-			--yesno "The user \`$name\` already exists on this system. CoolRune can install for a user already existing, but it will OVERWRITE any conflicting settings/dotfiles on the user account.\\n\\CoolRune will NOT overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that CoolRune will change $name's password to the one you just gave." 14 70
-}
-
-preinstallmsg() {
-	whiptail --title "Install CoolRune" --yes-button "Starting installation" \
-		--no-button "Cancel" \
-		--yesno "The rest of the installation will now be totally automated, so you can sit back and relax.\\n\\nIt will take some time, but when done, you can relax even more with your complete system.\\n\\nNow just press <Let's go!> and the system will begin installation!" 13 60 || {
-		clear
-		exit 1
-	}
-}
-
-adduserandpass() {
-	# Adds user `$name` with password $pass1.
-	whiptail --infobox "Adding user \"$name\"..." 7 50
-	useradd -m -g wheel -s /bin/zsh "$name" >/dev/null 2>&1 ||
-		usermod -a -G wheel "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
-	export repodir="/home/$name/.local/src"
-	mkdir -p "$repodir"
-	chown -R "$name":wheel "$(dirname "$repodir")"
-	echo "$name:$pass1" | chpasswd
-	unset pass1 pass2
-}
-
 refreshkeys() {
 	case "$(readlink -f /sbin/init)" in
 	*systemd*)
-		whiptail --infobox "Refreshing Keyring..." 7 40
-		curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Pacman-Files/master/mirrorlist-arch
-		touch /home/artix/mirrorlist-arch
-		mv /home/artix/mirrorlist-arch /etc/pacman.d
-		pacman --noconfirm -S artix-keyring >/dev/null 2>&1
+		whiptail --infobox "Installing CoolRune" 7 40
+		/home/$USER/Files/CoolRune-Files-Install.sh
+		/home/$USER/Files/CoolRune-NVIDIA-Patch.sh
+		/home/$USER/Files/Last.sh
+		pacman --noconfirm -Sy artix-keyring >/dev/null 2>&1
 		;;
 	*)
 		whiptail --infobox "Enabling Repositories..." 7 40
@@ -95,7 +52,7 @@ Server = https://ftp.crifo.org/artix-universe/" >>/etc/pacman.conf
 			pacman -Sy --noconfirm >/dev/null 2>&1
 		fi
 		pacman --noconfirm --needed -S \
-			archlinux-keyring artix-archlinux-support >/dev/null 2>&1
+			artix-archlinux-support >/dev/null 2>&1
 		for repo in extra community; do
 			grep -q "^\[$repo\]" /etc/pacman.conf ||
 				echo "[$repo]

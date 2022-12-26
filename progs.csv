@@ -61,6 +61,7 @@ F,gwe,
 ,gimp,
 ,font-manager,
 ,gnome-calculator,
+,gnome-keyring, " "
 ,gnome-screenshot,
 ,gwenview,
 ,haveged-s6,
@@ -120,7 +121,6 @@ F,libreoffice,
 ,pulsemixer,"is an audio controller."
 ,lynis, "security tester"
 ,unclutter,"hides an inactive mouse."
-,xfce4, "the XFCE desktop enviroment"
 ,unzip,"unzips zips."
 ,sneedacity, "sound recorder and manipulator"
 ,xclip,"allows for copying and pasting from the command line."
@@ -132,5 +132,5 @@ F,libreoffice,
 A,zsh-fast-syntax-highlighting-git,"provides syntax highlighting in the shell."
 A,task-spooler,"queues commands or files for download."
 A,simple-mtpfs,"enables the mounting of cell phones."
-A,CoolRune-Files,
-A,CoolRune-NVIDIA-Files,
+G,CoolRune-Files,
+G,CoolRune-NVIDIA-Files, " "
