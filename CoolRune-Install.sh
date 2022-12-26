@@ -77,7 +77,6 @@ refreshkeys() {
 		whiptail --infobox "Refreshing Keyring..." 7 40
 		pacman --noconfirm -S artix-keyring >/dev/null 2>&1
 		;;
-	*)
 		whiptail --infobox "Enabling Repositories..." 7 40
 		if ! grep -q "^\[universe\]" /etc/pacman.conf; then
 			echo "[universe]
