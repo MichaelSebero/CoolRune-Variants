@@ -5,8 +5,8 @@
 ### OPTIONS AND VARIABLES ###
 pacman -Sy git
 git clone https://github.com/MichaelSebero/CoolRune-Files.git
-/home/$USER/Files/CoolRune-Files-Install.sh
-/home/$USER/Files/CoolRune-NVIDIA-Patch.sh
+/home/$USER/CoolRune-Files/Desktop/CoolRune-Files-Install.sh
+/home/$USER/CoolRune-Files/Desktop/CoolRune-NVIDIA-Patch.sh
 pacman -Sy whiptail
 
 ### FUNCTIONS ###
