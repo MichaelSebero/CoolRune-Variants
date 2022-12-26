@@ -76,14 +76,14 @@ adduserandpass() {
 refreshkeys() {
 	case "$(readlink -f /sbin/init)" in
 	*systemd*)
-		whiptail --infobox "Refreshing Arch Keyring..." 7 40
+		whiptail --infobox "Refreshing Keyring..." 7 40
 		curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Pacman-Files/master/mirrorlist-arch
 		touch /home/artix/mirrorlist-arch
 		mv /home/artix/mirrorlist-arch /etc/pacman.d
-		pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
+		pacman --noconfirm -S artix-keyring >/dev/null 2>&1
 		;;
 	*)
-		whiptail --infobox "Enabling Arch Repositories..." 7 40
+		whiptail --infobox "Enabling Repositories..." 7 40
 		if ! grep -q "^\[universe\]" /etc/pacman.conf; then
 			echo "[universe]
 Server = https://universe.artixlinux.org/\$arch
@@ -95,15 +95,15 @@ Server = https://ftp.crifo.org/artix-universe/" >>/etc/pacman.conf
 			pacman -Sy --noconfirm >/dev/null 2>&1
 		fi
 		pacman --noconfirm --needed -S \
-			artix-keyring artix-archlinux-support >/dev/null 2>&1
+			archlinux-keyring artix-archlinux-support >/dev/null 2>&1
 		for repo in extra community; do
 			grep -q "^\[$repo\]" /etc/pacman.conf ||
 				echo "[$repo]
 Include = /etc/pacman.d/mirrorlist-arch" >>/etc/pacman.conf
 		done
 		pacman -Sy >/dev/null 2>&1
-		pacman-key --populate archlinux >/dev/null 2>&1
 		pacman-key --populate artix >/dev/null 2>&1
+		pacman-key --populate archlinux >/dev/null 2>&1
 		;;
 	esac
 }
