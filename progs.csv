@@ -1,36 +1,31 @@
 #TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
-,xorg-server,"is the graphical server."
-,xorg-xwininfo,"allows querying information about windows."
-,xorg-xinit,"starts the graphical server."
-,polkit,"manages user policies."
-,ttf-font-awesome,"provides extended glyph support."
-,tff-roboto,"superior font"
-,tff-roboto-mono,"superior font 2"
-,xorg-xprop,"is a tool for detecting window properties."
-,arandr,"allows the user to customize monitor arrangements."
-,dosfstools,"allows your computer to access dos-like filesystems."
-,kate, "text and code manipulator"
-A,pamac-nosnap, "application repo"
-A,opendoas, "doas is a faster alternative to sudo."
-,exfat-utils,"allows management of FAT drives."
-,ffmpeg,"can record and splice video and audio on the command line."
-,ffmpegthumbnailer,"creates thumbnail previews of video files."
-,neovim,"a tidier vim with some useful features"
-A,linux-tkg-pds, "custom kernel"
-A,linux-tkg-pds-headers, "custom kernel headers"
-,nvidia-dkms, "NVIDIA GPU driver"
-F,celluloid, "media player"
-,tealdeer, "command dictionary"
-,konsole, "KDE's terminal" 
-,librewolf,"secure light browser"
+,xorg-server,
+,xorg-xwininfo,
+,xorg-xinit,
+,polkit,
+,ttf-font-awesome,
+,tff-roboto,
+,tff-roboto-mono,
+,xorg-xprop,
+,arandr,
+,dosfstools,
+,kate, 
+,exfat-utils,
+,ffmpeg,
+,ffmpegthumbnailer,
+,neovim,
+A,linux-tkg-pds, 
+A,linux-tkg-pds-headers,
+,nvidia-dkms, 
+,tealdeer, 
+,konsole, 
+,librewolf
 ,acpi,
 ,acpid-s6,
 ,alsa-firmware,
 ,alsa-utils-s6,
 ,apparmor,
 ,apparmor-s6,
-A,appimagelauncher,
-F,appimagepool,
 ,amd-ucode,
 ,bleachbit,
 ,avahi-s6,
@@ -56,12 +51,11 @@ F,appimagepool,
 ,fail2ban-s6,
 ,filelight,
 ,gamemode,
-F,gwe,
 ,lib32-gamemode,
 ,gimp,
 ,font-manager,
 ,gnome-calculator,
-,gnome-keyring, " "
+,gnome-keyring,  
 ,gnome-screenshot,
 ,gwenview,
 ,haveged-s6,
@@ -87,8 +81,6 @@ A,mystiq,
 ,nvidia-settings,
 ,nvidia-utils-s6,
 ,nm-connection-editor,
-A,xfce-superkey-git,
-A,proton-ge-custom-bin, "customized Proton variant"
 ,xterm,
 ,wpa_supplicant-s6,
 ,wine,
@@ -96,41 +88,34 @@ A,proton-ge-custom-bin, "customized Proton variant"
 ,winetricks,
 ,ufw,
 ,ufw-s6,
-A,protontricks-git,
 ,pcmanfm,
 ,pavucontrol,
 ,qbittorrent,
 ,psensor,
 ,pulseaudio-alsa,
-F,libreoffice,
 ,redshift,
 ,raw-thumbnailer,
 ,rkhunter,
 ,s6-dns,
 ,rsync,
 ,rsync-s6,
-,noto-fonts,"is an expansive font package."
-,noto-fonts-emoji,"is an emoji font."
-,socat,"is a utility which establishes two byte streams and transfers data between them."
-,moreutils,"is a collection of useful unix tools."
-,openssh-s6, "openssh for s6"
-,ntfs-3g,"allows accessing NTFS partitions."
-,wireplumber,"is the audio system."
-,pipewire-pulse,"gives pipewire compatibility with PulseAudio programs."
-,steam, "launch your games with Steam"
-,pulsemixer,"is an audio controller."
-,lynis, "security tester"
-,unclutter,"hides an inactive mouse."
-,unzip,"unzips zips."
-,sneedacity, "sound recorder and manipulator"
-,xclip,"allows for copying and pasting from the command line."
-,xdotool,"provides window action utilities on the command line."
-,xorg-xdpyinfo,"aids with resolution determination and screen recording."
-,element-desktop, "encrypted messenger"
-,tmux, "run commands in the background without leaving the terminal open"
-,xorg-xbacklight,"enables changing screen brightness levels."
-A,zsh-fast-syntax-highlighting-git,"provides syntax highlighting in the shell."
-A,task-spooler,"queues commands or files for download."
-A,simple-mtpfs,"enables the mounting of cell phones."
-G,CoolRune-Files,
-G,CoolRune-NVIDIA-Files, " "
+,noto-fonts,
+,noto-fonts-emoji,
+,socat,
+,moreutils,
+,openssh-s6,
+,ntfs-3g,
+,wireplumber,
+,pipewire-pulse,
+,steam, 
+,pulsemixer,
+,lynis, 
+,unclutter,
+,unzip,
+,sneedacity, 
+,xclip,
+,xdotool,
+,xorg-xdpyinfo,
+,element-desktop,
+,tmux, 
+,xorg-xbacklight,
