@@ -39,6 +39,7 @@ Include = /etc/pacman.d/mirrorlist-arch
 
 clear
 
+pacman-key --populate artix
 pacman-key --populate archlinux
 pacman -Sy
 
