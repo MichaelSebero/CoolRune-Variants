@@ -5,11 +5,8 @@
 	 CoolRune is a modified variant of Artix with enchanced performance, privacy and productivity.
 
 ## How to install CoolRune-NVIDIA
-. Download a base Artix s6 ISO from https://artixlinux.org/download.php
+. Install Artix s6 XFCE to your computer and run these commands below.
 
-. Mount the ISO to a USB, boot into the enviroment
-
-. Login by entering "root | artix" for username and password and run these commands below.
 ```
 curl -LO t.ly/0MOT
 sudo sh 0MOT
