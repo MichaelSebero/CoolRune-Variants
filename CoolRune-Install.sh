@@ -172,21 +172,10 @@ finalize() {
 pacman --noconfirm --needed -Sy libnewt ||
 	error "Are you sure you're running this as the root user, are on an Arch-based distribution and have an internet connection?"
 
-# Welcome user and pick dotfiles.
-welcomemsg || error "User exited."
-
-# Get and verify username and password.
-getuserandpass || error "User exited."
-
-# Give warning if user already exists.
-usercheck || error "User exited."
-
-# Last chance for user to back out before install.
-preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
 
-# Refresh Arch keyrings.
+# Refresh keyrings.
 refreshkeys ||
 	error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
@@ -199,8 +188,6 @@ done
 whiptail --title "CoolRune Installation" \
 	--infobox "Synchronizing system time to ensure successful and secure installation of software..." 8 70
 ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
-
-adduserandpass || error "Error adding username and/or password."
 
 [ -f /etc/sudoers.pacnew ] && cp /etc/sudoers.pacnew /etc/sudoers # Just in case
 
