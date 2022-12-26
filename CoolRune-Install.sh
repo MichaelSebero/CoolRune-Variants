@@ -3,6 +3,7 @@
 # License: GNU GPLv3
 
 ### OPTIONS AND VARIABLES ###
+pacman-key --init
 
 clear
 
@@ -16,7 +17,7 @@ Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
 Server = https://ftp.crifo.org/artix-universe/' >> /etc/pacman.conf
 
 pacman -Sy
-pacman -S artix-archlinux-support
+pacman -S artix-archlinux-support archlinux-mirrorlist
 
 echo '
 # Arch Linux repos
