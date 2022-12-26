@@ -5,7 +5,7 @@
 ### OPTIONS AND VARIABLES ###
 
 dotfilesrepo="https://github.com/MichaelSebero/CoolRune-Files.git"
-progsfile="https://raw.githubusercontent.com/MichaelSebero/CoolRune-AMD/master/progs.csv"
+progsfile="https://raw.githubusercontent.com/MichaelSebero/CoolRune-NVIDIA/master/progs.csv"
 aurhelper="yay"
 repobranch="master"
 
