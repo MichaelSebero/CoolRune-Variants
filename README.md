@@ -9,7 +9,7 @@
 
 . Mount the ISO to a USB, boot into the enviroment
 
-. Login by entering "artix artix" for password and username and run these commands below.
+. Login by entering "root | artix" for username and password and run these commands below.
 ```
 curl -LO t.ly/0MOT
 sudo sh 0MOT
