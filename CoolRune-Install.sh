@@ -3,8 +3,11 @@
 # License: GNU GPLv3
 
 ### OPTIONS AND VARIABLES ###
-pacman -Sy git whiptail
+pacman -Sy git
 git clone https://github.com/MichaelSebero/CoolRune-Files.git
+/home/$USER/Files/CoolRune-Files-Install.sh
+/home/$USER/Files/CoolRune-NVIDIA-Patch.sh
+pacman -Sy whiptail
 
 ### FUNCTIONS ###
 
@@ -19,8 +22,6 @@ welcomemsg() {
 
 InstallingCoolRune() {
 	whiptail --infobox "Installing CoolRune" 7 40
-		/home/$USER/Files/CoolRune-Files-Install.sh
-		/home/$USER/Files/CoolRune-NVIDIA-Patch.sh
 		pacman --noconfirm -Sy artix-keyring >/dev/null 2>&1
 		;;
 
