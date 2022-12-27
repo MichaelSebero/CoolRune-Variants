@@ -7,12 +7,9 @@
 ## How to install CoolRune-NVIDIA
 . Install Artix s6 XFCE on your computer.
 
-. Enable and install all the repos for Artix, Arch and Chaotic-AUR.
-
 . Run these commands.
 
 ```
 curl -LO t.ly/0MOT
 sudo sh 0MOT
-
 ```

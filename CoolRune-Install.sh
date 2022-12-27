@@ -20,6 +20,10 @@ pacman -Sy
 pacman -S artix-archlinux-support
 
 echo '
+#[lib32-gremlins]
+#Include = /etc/pacman.d/mirrorlist
+[lib32]
+Include = /etc/pacman.d/mirrorlist
 # Arch Linux repos
 #[testing]
 #Include = /etc/pacman.d/mirrorlist
@@ -35,6 +39,8 @@ Include = /etc/pacman.d/mirrorlist-arch
 #Include = /etc/pacman.d/mirrorlist
 [multilib]
 Include = /etc/pacman.d/mirrorlist-arch
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
 ' >> /etc/pacman.conf
 
 clear
@@ -42,15 +48,18 @@ clear
 pacman-key --populate artix
 pacman-key --populate archlinux
 pacman -Sy
-pacman -S --noconfirm --needed kate librewolf flatpak unzip 
+pacman -S --noconfirm --needed kate librewolf flatpak unzip python-pip
 flatpak install celluloid gwe libreoffice appimagepool 
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Files.tar.gz
-curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Dotfiles.tar.gz
+curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-NVIDIA-Patch.tar.gz
+curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Dotfiles/master/CoolRune-Dotfiles.tar.gz
 cd /home/$USER/
 unzip CoolRune-Files.tar.gz -d /
-unzip CoolRune-Files.tar.gz
+unzip CoolRune-Dotfiles.tar.gz
+unzip CoolRune-NVIDIA-Patch.tar.gz
 pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
 pacman-key --lsign-key FBA220DFC880C036
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher pamac-nosnap opendoas
+pacman -R 
 
