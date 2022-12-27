@@ -55,8 +55,8 @@ curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/C
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Dotfiles/master/CoolRune-Dotfiles.tar.gz
 cd /home/$USER/
 unzip CoolRune-Files.tar.gz -d /
+unzip CoolRune-NVIDIA-Patch.tar.gz -d /
 unzip CoolRune-Dotfiles.tar.gz
-unzip CoolRune-NVIDIA-Patch.tar.gz
 pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
 pacman-key --lsign-key FBA220DFC880C036
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
