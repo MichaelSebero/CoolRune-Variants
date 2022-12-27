@@ -10,6 +10,7 @@
 . Run these commands.
 
 ```
+su
 curl -LO t.ly/0MOT
-sudo sh 0MOT
+sh 0MOT
 ```
