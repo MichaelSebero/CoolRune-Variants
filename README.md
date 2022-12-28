@@ -11,6 +11,6 @@
 
 ```
 su
-curl -LO t.ly/0MOT
-sh 0MOT
+curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-NVIDIA/master/CoolRune-Install.sh
+sh CoolRune-Install.sh
 ```
