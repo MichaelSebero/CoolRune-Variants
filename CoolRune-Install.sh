@@ -15,9 +15,8 @@ flatpak install -y io.github.celluloid_player.Celluloid com.leinardi.gwe org.lib
 pip install psutil python-dateutil protonvpn-cli &&
 
 # AUR REPO FILES
-yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher opendoas pamac-nosnap && yay -S linux-tkg-pds linux-tkg-pds-headers
+yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher opendoas yay -S linux-tkg-pds linux-tkg-pds-headers pamac-nosnap &&
 
 # CoolRune Last Commands
-pacman -R linux linux headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-live artix-community-presets artix-grub-theme &&
-7z e CoolRune-Files.7z -o/ && 7z e CoolRune-NVIDIA-Patch.7z -o/ && 7z e CoolRune-Dotfiles.7z -o/home/$USER &&
+pacman -R linux linux-headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-theme && 7z e CoolRune-Files.7z -o/ && 7z e CoolRune-NVIDIA-Patch.7z -o/ && 7z e CoolRune-Dotfiles.7z -o/home/$USER &&
 update-grub && s6-db-reload && reboot
