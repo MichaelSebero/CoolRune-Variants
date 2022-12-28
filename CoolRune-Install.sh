@@ -4,8 +4,8 @@
 
 ### OPTIONS AND VARIABLES ###
 
-pacman-key --init && pacman -Sy --noconfirm --needed unzip && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Pacman-1.tar.gz && unzip CoolRune-Pacman-1.tar.gz -d / && pacman -Sy --noconfirm --needed archlinux-keyring artix-keyring artix-archlinux-support && pacman-key --populate archlinux artix
-&& pacman -Sy --noconfirm --needed lib32-artix-archlinux-support flatpak kate librewolf python-pip 
+pacman-key --init && pacman -Sy --noconfirm --needed unzip && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Pacman-1.tar.gz && unzip /home/$USER/CoolRune-Pacman-1.tar.gz -d / && pacman -Sy --noconfirm --needed archlinux-keyring artix-keyring artix-archlinux-support && pacman-key --populate archlinux artix
+pacman -Sy --noconfirm --needed lib32-artix-archlinux-support flatpak kate librewolf python-pip 
 flatpak install celluloid gwe libreoffice appimagepool 
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Files.tar.gz
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-NVIDIA-Patch.tar.gz
