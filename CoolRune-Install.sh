@@ -16,7 +16,7 @@ Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
 Server = https://ftp.crifo.org/artix-universe/' >> /etc/pacman.conf
 
 pacman -Sy
-pacman -S archlinux-keyring artix-keyring artix-archlinux-support && pacman-key --init && pacman-key --refresh-keys
+pacman -S archlinux-keyring artix-keyring artix-archlinux-support
 
 echo '
 [omniverse]
@@ -57,7 +57,7 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 
 clear
 
-pacman-key --populate archlinux artix
+pacman-key --init && pacman-key --populate archlinux artix
 pacman -Sy
 pacman -S --noconfirm --needed lib32-artix-archlinux-support flatpak kate librewolf unzip python-pip 
 flatpak install celluloid gwe libreoffice appimagepool 
