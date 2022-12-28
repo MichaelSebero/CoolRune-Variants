@@ -16,8 +16,7 @@ Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
 Server = https://ftp.crifo.org/artix-universe/' >> /etc/pacman.conf
 
 pacman -Sy
-pacman -S archlinux-keyring artix-keyring artix-archlinux-support
-pacman-key --init
+pacman -S archlinux-keyring artix-keyring artix-archlinux-support && pacman-key --init && pacman-key --refresh-keys
 
 echo '
 [omniverse]
