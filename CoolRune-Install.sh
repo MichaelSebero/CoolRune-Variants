@@ -3,7 +3,6 @@
 # License: GNU GPLv3
 
 ### OPTIONS AND VARIABLES ###
-pacman-key --init
 
 clear
 
@@ -17,7 +16,8 @@ Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
 Server = https://ftp.crifo.org/artix-universe/' >> /etc/pacman.conf
 
 pacman -Sy
-pacman -S artix-keyring archlinux-keyring artix-archlinux-support
+pacman -S archlinux-keyring artix-keyring artix-archlinux-support
+pacman-key --init
 
 echo '
 [omniverse]
@@ -29,7 +29,7 @@ Server = http://omniverse.artixlinux.org/$arch
 [lib32]
 Include = /etc/pacman.d/mirrorlist
 
-# Arch Linux
+#Arch Linux
 #[testing]
 #Include = /etc/pacman.d/mirrorlist
 
@@ -58,10 +58,9 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 
 clear
 
-pacman-key --populate artix
-pacman-key --populate archlinux
+pacman-key --populate archlinux artix
 pacman -Sy
-pacman -S --noconfirm --needed kate librewolf flatpak unzip python-pip
+pacman -S --noconfirm --needed lib32-artix-archlinux-support flatpak kate librewolf unzip python-pip 
 flatpak install celluloid gwe libreoffice appimagepool 
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Files.tar.gz
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-NVIDIA-Patch.tar.gz
