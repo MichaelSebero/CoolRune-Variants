@@ -3,7 +3,6 @@
 # License: GNU GPLv3
 
 ### CoolRune Repositories ###
-
 pacman-key --init && pacman -Sy --noconfirm --needed p7zip mkdir /home/CoolRune-Files && cd /home/CoolRune-Files && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Pacman-1.7z && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Pacman-2.7z && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Files.7z && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-NVIDIA-Patch.7z && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Dotfiles.7z && 7z e CoolRune-Pacman-1.7z -o/etc -y && pacman-key --refresh && pacman -Sy --noconfirm --needed artix-keyring archlinux-keyring artix-archlinux-support && pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com && pacman-key --lsign-key FBA220DFC880C036 && pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && 7z e CoolRune-Pacman-2.7z -o/etc -y && pacman-key --populate archlinux artix && pacman -Syyu --noconfirm --needed &&
 
 # REPO FILES
@@ -21,5 +20,4 @@ yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-
 # CoolRune Last Commands
 7z e CoolRune-Files.7z -o/ && 7z e CoolRune-NVIDIA-Patch.7z -o/ && 7z e CoolRune-Dotfiles.7z -o/home/$USER &&
 pacman -R linux linux headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril &&
-update-grub && s6-db-reload && reboot &&
-
+update-grub && s6-db-reload && reboot
