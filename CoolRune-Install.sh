@@ -4,62 +4,12 @@
 
 ### OPTIONS AND VARIABLES ###
 
-clear
-
-echo '
-[universe]
-Server = https://universe.artixlinux.org/$arch
-Server = https://mirror1.artixlinux.org/universe/$arch
-Server = https://mirror.pascalpuffke.de/artix-universe/$arch
-Server = https://artixlinux.qontinuum.space/artixlinux/universe/os/$arch
-Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
-Server = https://ftp.crifo.org/artix-universe/' >> /etc/pacman.conf
-
-pacman -Sy
-pacman -S archlinux-keyring artix-keyring artix-archlinux-support
-
-echo '
-[omniverse]
-Server = http://omniverse.artixlinux.org/$arch
-
-#[lib32-gremlins]
-#Include = /etc/pacman.d/mirrorlist
-
-[lib32]
-Include = /etc/pacman.d/mirrorlist
-
-#Arch Linux
-#[testing]
-#Include = /etc/pacman.d/mirrorlist
-
-#[core]
-#Include = /etc/pacman.d/mirrorlist-arch
-
-[extra]
-Include = /etc/pacman.d/mirrorlist-arch
-
-#[community-testing]
-#Include = /etc/pacman.d/mirrorlist
-
-[community]
-Include = /etc/pacman.d/mirrorlist-arch
-
-#[multilib-testing]
-#Include = /etc/pacman.d/mirrorlist
-
-[multilib]
-Include = /etc/pacman.d/mirrorlist-arch
-
-#AUR
-[chaotic-aur]
-Include = /etc/pacman.d/chaotic-mirrorlist
-' >> /etc/pacman.conf
-
-clear
-
-pacman-key --init && pacman-key --populate archlinux artix
-pacman -Sy
-pacman -S --noconfirm --needed lib32-artix-archlinux-support flatpak kate librewolf unzip python-pip 
+pacman-key --init
+pacman -Sy --noconfirm --needed unzip
+curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Pacman-1.tar.gz
+unzip CoolRune-Pacman-1.tar.gz -d /
+pacman -Sy --noconfirm --needed archlinux-keyring artix-keyring artix-archlinux-support && pacman-key --populate archlinux artix
+pacman -Sy --noconfirm --needed lib32-artix-archlinux-support flatpak kate librewolf python-pip 
 flatpak install celluloid gwe libreoffice appimagepool 
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Files.tar.gz
 curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-NVIDIA-Patch.tar.gz
