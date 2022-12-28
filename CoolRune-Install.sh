@@ -17,28 +17,41 @@ Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
 Server = https://ftp.crifo.org/artix-universe/' >> /etc/pacman.conf
 
 pacman -Sy
-pacman -S artix-archlinux-support
+pacman -S artix-keyring archlinux-keyring artix-archlinux-support
 
 echo '
+[omniverse]
+Server = http://omniverse.artixlinux.org/$arch
+
 #[lib32-gremlins]
 #Include = /etc/pacman.d/mirrorlist
+
 [lib32]
 Include = /etc/pacman.d/mirrorlist
-# Arch Linux repos
+
+# Arch Linux
 #[testing]
 #Include = /etc/pacman.d/mirrorlist
+
 #[core]
 #Include = /etc/pacman.d/mirrorlist-arch
+
 [extra]
 Include = /etc/pacman.d/mirrorlist-arch
+
 #[community-testing]
 #Include = /etc/pacman.d/mirrorlist
+
 [community]
 Include = /etc/pacman.d/mirrorlist-arch
+
 #[multilib-testing]
 #Include = /etc/pacman.d/mirrorlist
+
 [multilib]
 Include = /etc/pacman.d/mirrorlist-arch
+
+#AUR
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 ' >> /etc/pacman.conf
