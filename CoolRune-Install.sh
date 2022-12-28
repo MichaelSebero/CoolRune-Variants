@@ -15,7 +15,7 @@ flatpak install io.github.celluloid_player.Celluloid com.leinardi.gwe org.libreo
 pip install psutil python-dateutil protonvpn-cli &&
 
 # AUR REPO FILES
-yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher pamac-nosnap opendoas linux-tkg-pds linux-tkg-pds-headers pamac-nosnap &&
+yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher opendoas linux-tkg-pds linux-tkg-pds-headers pamac-nosnap &&
 
 # CoolRune Last Commands
 7z e CoolRune-Files.7z -o/ && 7z e CoolRune-NVIDIA-Patch.7z -o/ && 7z e CoolRune-Dotfiles.7z -o/home/$USER &&
