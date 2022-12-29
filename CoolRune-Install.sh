@@ -18,4 +18,4 @@ pip install psutil python-dateutil protonvpn-cli &&
 yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher opendoas yay -S linux-tkg-pds linux-tkg-pds-headers pamac-nosnap &&
 
 # CoolRune Last Commands
-pacman -R --noconfirm linux linux-headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-theme && 7z x CoolRune-Files.7z -o/ -y && 7z x CoolRune.7z -o/ -y && 7z x CoolRune-NVIDIA-Patch.7z -o/ -y && 7z e CoolRune-Dotfiles.7z -o/home/$USER -y && update-grub && s6-db-reload && reboot
+pacman -R --noconfirm linux linux-headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-theme && 7z x CoolRune-Files.7z -o/ -y && 7z e CoolRune.7z -o/ -y && 7z x CoolRune-NVIDIA-Patch.7z -o/ -y && 7z e CoolRune-Dotfiles.7z -o/home/$USER -y && update-grub && s6-db-reload && reboot
