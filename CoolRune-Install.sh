@@ -15,7 +15,7 @@ flatpak install -y io.github.celluloid_player.Celluloid com.leinardi.gwe org.lib
 pip install psutil python-dateutil protonvpn-cli &&
 
 # AUR REPO FILES
-yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher opendoas yay -S linux-tkg-pds linux-tkg-pds-headers pamac-nosnap && update-grub &&
+yay -S --noconfirm --needed protontricks-git proton-ge-custom-bin xfce-superkey-git simple-mtpfs task-spooler zsh-fast-syntax-highlighting-git mystiq appimagelauncher opendoas linux-tkg-pds linux-tkg-pds-headers pamac-nosnap && update-grub &&
 
 # CoolRune Last Commands
 pacman -R --noconfirm linux linux-headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-theme && 7z x CoolRune-Files.7z -o/ -y && 7z x CoolRune.7z -o/ -y && 7z x CoolRune-NVIDIA-Patch.7z -o/ -y && chattr +i /etc/hosts.conf && s6-db-reload && read -rep $'Extract CoolRune-Dotfiles.7z in /home/yourusername, this file can be found in /home/CoolRune-Files. Restart your computer when the files are extacted. '
