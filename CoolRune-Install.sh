@@ -12,7 +12,7 @@ pacman -S --noconfirm --needed lib32-artix-archlinux-support base-devel flatpak 
 flatpak install -y io.github.celluloid_player.Celluloid com.leinardi.gwe org.libreoffice.LibreOffice io.github.prateekmedia.appimagepool &&
 
 # PYTHON FILES
-pip install psutil python-dateutil protonvpn-cli &&
+pip install psutil python-dateutil protonvpn-cli pydub &&
 
 # CoolRune Last Commands
 pacman -R --noconfirm linux linux-headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-theme mpv xfce4-sensors-plugin xfce4-notes-plugin && 7z x CoolRune-Files.7z -o/ -y && 7z x CoolRune.7z -o/ -y && 7z x CoolRune-NVIDIA-Patch.7z -o/ -y  && chattr +i /etc/hosts && s6-service add default apparmor && s6-service add default fail2ban && s6-service add default NetworkManager && s6-service add default dnscrypt-proxy && rm /etc/s6/adminsv/default/contents.d/connmand && chattr +i /etc/resolv.conf && s6-db-reload && grub-mkconfig -o /boot/grub/grub.cfg && grub-install && update-grub && read -rep $'!!! Extract CoolRune-Dotfiles.7z in /home/yourusername using pcmanfm. This file can be found in /home/CoolRune-Files. Press enter to restart your computer when the files are extacted. ' && reboot
