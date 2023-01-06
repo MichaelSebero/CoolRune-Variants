@@ -10,17 +10,17 @@
 # NVIDIA
 
 su
-curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-NVIDIA/master/CoolRune-Install.sh
-sh CoolRune-Install.sh
+curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Variants/master/CoolRune-NVIDIA-Install.sh
+sh CoolRune-NVIDIA-Install.sh
 
 # AMD
 
 su
-curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-AMD/master/CoolRune-Install.sh
-sh CoolRune-Install.sh
+curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Variants/master/CoolRune-AMD-Install.sh
+sh CoolRune-AMD-Install.sh
 
 # INTEL
 
 su
-curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Intel/master/CoolRune-Install.sh
-sh CoolRune-Install.sh
+curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Variants/master/CoolRune-INTEL-Install.sh
+sh CoolRune-INTEL-Install.sh
