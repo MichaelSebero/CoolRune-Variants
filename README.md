@@ -7,14 +7,6 @@
 
 . Run these commands.
 
-# NVIDIA
-
-su
-	
-curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Variants/master/CoolRune-NVIDIA-Install.sh
-	
-sh CoolRune-NVIDIA-Install.sh
-
 # AMD
 
 su
@@ -30,3 +22,11 @@ su
 curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Variants/master/CoolRune-INTEL-Install.sh
 	
 sh CoolRune-INTEL-Install.sh
+
+# NVIDIA
+
+su
+	
+curl -LO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Variants/master/CoolRune-NVIDIA-Install.sh
+	
+sh CoolRune-NVIDIA-Install.sh
