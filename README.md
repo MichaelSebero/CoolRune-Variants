@@ -5,6 +5,8 @@
 
 . Install Artix s6 XFCE on your computer.
 
+. Pick a variant which matches your graphics card.
+
 . Run these commands.
 
 # AMD
