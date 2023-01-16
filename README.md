@@ -7,7 +7,7 @@
 
 . Pick a variant which matches your graphics card.
 
-. Run these commands.
+. Run the corresponding commands.
 
 # AMD
 
