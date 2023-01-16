@@ -2,7 +2,7 @@
 
 # License: GNU GPLv3
 
-### CoolRune Repositories ###
+# FIRST COMMANDS
 pacman-key --init && pacman -Sy --noconfirm --needed p7zip && mkdir /home/CoolRune-Files && cd /home/CoolRune-Files && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Pacman-1.7z && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Pacman-2.7z && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune.7z && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Files.7z && 7z e CoolRune-Pacman-1.7z -o/etc -y && pacman-key --refresh && pacman -Sy --noconfirm --needed artix-keyring archlinux-keyring artix-archlinux-support && pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com && pacman-key --lsign-key FBA220DFC880C036 && pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && 7z e CoolRune-Pacman-2.7z -o/etc -y && pacman-key --populate archlinux artix && curl -RO https://raw.githubusercontent.com/MichaelSebero/CoolRune-Files/master/CoolRune-Dotfiles.7z && pacman -Syyu --noconfirm --needed &&
 
 # REPO FILES
@@ -14,6 +14,6 @@ flatpak install -y io.github.celluloid_player.Celluloid org.libreoffice.LibreOff
 # PYTHON FILES
 pip install psutil python-dateutil protonvpn-cli pydub &&
 
-# CoolRune Last Commands
-pacman -R --noconfirm linux linux-headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-theme mpv xfce4-sensors-plugin xfce4-notes-plugin && 7z x CoolRune-Files.7z -o/ -y && 7z x CoolRune.7z -o/ -y && chattr +i /etc/hosts && s6-service add default apparmor && s6-service add default fail2ban && s6-service add default NetworkManager && s6-service add default dnscrypt-proxy && rm /etc/s6/adminsv/default/contents.d/connmand && chattr +i /etc/resolv.conf && s6-db-reload && grub-mkconfig -o /boot/grub/grub.cfg && grub-install && update-grub && read -rep $'!!! Extract CoolRune-Dotfiles.7z in /home/yourusername using pcmanfm. This file can be found in /home/CoolRune-Files. Press enter to restart your computer when the files are extacted. ' && reboot
+# LAST COMMANDS
+pacman -R --noconfirm linux linux-headers epiphany xfce4-terminal xfce4-screenshooter parole xfce4-taskmanager mousepad leafpad xfburn ristretto xfce4-appfinder atril artix-branding-base artix-grub-theme mpv xfce4-sensors-plugin xfce4-notes-plugin && 7z x CoolRune-Files.7z -o/ -y && 7z x CoolRune.7z -o/ -y && chattr +i /etc/hosts && s6-service add default apparmor && s6-service add default fail2ban && s6-service add default NetworkManager && s6-service add default dnscrypt-proxy && rm /etc/s6/adminsv/default/contents.d/connmand && chattr +i /etc/resolv.conf && s6-db-reload && grub-mkconfig -o /boot/grub/grub.cfg && grub-install && update-grub && read -rep $'!!! Extract CoolRune-Dotfiles.7z in /home/yourusername using pcmanfm. This file can be found in /home/CoolRune-Files. Press enter to restart your computer when the files are extacted. ' && rm -rf /home/CoolRune-Files && reboot
 
